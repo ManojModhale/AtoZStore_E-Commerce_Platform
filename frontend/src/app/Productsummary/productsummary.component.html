@@ -1,0 +1,227 @@
+<div class="mx-auto my-4 max-w-4xl md:my-6">
+  <div class="overflow-hidden  rounded-xl shadow">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div class="px-5 py-6 text-gray-900 md:px-8">
+        <div class="flow-root">
+          <div class="-my-6 divide-y divide-gray-200">
+            <div class="py-6">
+              <form  (ngSubmit)="addAddress()" [formGroup]="addressForm">
+                <div class="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0 ">
+                  <div>
+                    <h3
+                      id="contact-info-heading"
+                      class="text-lg font-semibold text-gray-900 details">
+                      Contact information
+                    </h3>
+                    <hr>
+                    <div class="mt-4 w-full">
+                      <label
+                        class="details text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        for="name">
+                        Full Name
+                      </label>
+                      <h3>{{userinfo.firstname}} {{userinfo.lastname}}</h3>
+                      <br>
+                      <label
+                      class="details text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      for="name">
+                      Contact
+                    </label>
+                    <h3>{{userinfo.contactno}}</h3>
+                    <br>
+                    <label
+                    class="details text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="name">
+                    E-mail
+                  </label>
+                  <h3>{{userinfo.email}}</h3>
+                    </div>
+                  </div>
+                  <hr class="my-8" />
+                  <div class="mt-10">
+                    <h3 class="text-lg font-semibold text-gray-900 details">
+                      Shipping address
+                    </h3>
+
+                    <div class="mt-6 grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-3">
+                      <div class="sm:col-span-3">
+                        <label
+                          for="address"
+                          class="block text-sm font-medium text-gray-700">
+                          Address
+                        </label>
+                        <div class="mt-1">
+                          <input
+                            type="text"
+                            id="address"
+                            formControlName="street"
+                            autoComplete="street-address"
+                            class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 border-black"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label
+                          for="city"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          City
+                        </label>
+                        <div class="mt-1">
+                          <input
+                            type="text"
+                            id="city"
+                            formControlName="city"
+                            autoComplete="address-level2"
+                            class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 border-black"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label
+                          for="state"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          State
+                        </label>
+                        <div class="mt-1">
+                          <input
+                            type="text"
+                            id="state"
+                            formControlName="state"
+                            autoComplete="address-level1"
+                            class="border-black flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          for="region"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                        LandMark
+                        </label>
+                        <div class="mt-1 ">
+                          <input
+                            type="text"
+                            id="region"
+                            formControlName="landMark"
+                            autoComplete="address-level1"
+                            class="border-black flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          for="region"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          Country
+                        </label>
+                        <div class="mt-1">
+                          <input
+                            type="text"
+                            id="region"
+                            formControlName="country"
+                            autoComplete="address-level1"
+                            class="border-black flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                          />
+                        </div>
+                      </div>
+
+
+                      <div>
+                        <label
+                          for="postal-code"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                        Pin code
+                        </label>
+                        <div class="mt-1">
+                          <input
+                            type="text"
+                            id="postal-code"
+                            formControlName="pincode"
+                            autoComplete="postal-code"
+                            class="border-black flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                          />
+                        </div>
+                      </div><br>
+                      <div>
+                      <button
+              type="submit"
+              class="rounded-md btn btn-info btn-outline text-warning border border-black px-3 py-2 text-sm font-semibold  shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black btn"
+            >
+          Add Address
+            </button>
+          </div>
+                    </div>
+                  </div>
+</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-100 px-5 py-6 md:px-8 backgroundform">
+        <div class="flow-root">
+          <ul class="-my-7 divide-y divide-gray-200">
+            <li class="flex items-stretch justify-between space-x-5 py-7" *ngFor="let product of products">
+
+                <div class="ml-5 flex flex-col justify-between">
+                  <div class="flex-1 ">
+                    <p class="text-sm font-bold details">{{product.productname}}</p>
+                    <ng-container *ngIf="product.color !== 'Standard' && product.color !== 'standard'">
+                      <p class="text-sm color" >
+                           Colour:   {{product.color|titlecase}}
+
+                      </p>
+                      </ng-container>
+
+                    <ng-container *ngIf="product.size !== 'Standard' && product.size !== 'standard'">
+                      <p class="mt-1.5 text-sm font-medium text-gray-500">
+                        Size: {{product.size}}
+                       </p>
+                      </ng-container>
+                  </div>
+                  <p class="mt-4 text-xs font-medium ">x{{product.quantity}}</p>
+                </div>
+
+                <div class="price" *ngIf="product.offer!=='null'  else nodiscount">
+                  <div class="d-flex align-items-center gap-2 border-black" >
+                    <h2>  {{ product.price | calculatepricepipe:product.offer | currency:'INR':'symbol':'1.2-2' }}</h2>
+                 <h5 class="d-flex align-items-center gap-2" > <span class="text-decoration-line-through">₹{{ product.price  }}</span></h5>
+                  </div>
+                  <span style="position: relative; bottom: 8px;"> ({{product.offer}} Off) </span>
+
+                 </div>
+              <ng-template #nodiscount>
+              <h2>{{ product.price | currency:'INR':'symbol':'1.2-2'  }}</h2>
+
+              </ng-template>
+            </li>
+          </ul>
+        </div>
+        <hr class="mt-6 border-gray-200" />
+        <ul class="mt-6 space-y-3 flex items-center justify-between">
+          <li class="flex items-center justify-between text-gray-900">
+            <p class="text-info font-weight-bold text-sm font-medium details"  [(ngModel)]="sum" >Total : {{sum|currency:'INR'}}</p>
+
+          </li>
+            <li>
+          <button
+          type="button"
+          class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+         (click)="addAddress()"
+
+          >
+          Make payment
+        </button>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,65 @@
+.prod-info{
+    margin-top: 10px;
+    width: 900px;
+    border: 5px lightgreen solid;
+
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.prodname{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+ 
+img{
+    height: 380px;
+    width: 380px;
+     
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+  
+
+@media only screen and (max-width: 768px) {
+    .prod-info {
+      width: 100%; /* Make it full width on smaller screens */
+      max-width: 100%; /* Ensure it doesn't exceed the screen width */
+      height: auto; /* Let the height adjust based on content */
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center items horizontally */
+      border: none; /* Remove border */
+      padding: 20px; /* Add some padding for better spacing */
+    }
+    .prod-info .lg:w-1/ {
+        width: 100%; /* Make the text content full width */
+        text-align:center;/* Center the text content */
+      }
+  
+    .prod-info img {
+      width: 100%; /* Make the image responsive, filling the container */
+      height: auto; /* Let the height adjust based on the width */
+      max-width: 100%; /* Ensure it doesn't exceed the container width */
+      margin-bottom: 20px; /* Add some space below the image */
+    }
+  
+   
+  
+    .prodname {
+      font-size: 2rem; /* Decrease font size for smaller screens */
+      margin: 0; /* Remove margin for better spacing */
+    }
+  }
+
+  
+  
+  
+ 

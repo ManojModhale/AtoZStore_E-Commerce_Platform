@@ -1,0 +1,73 @@
+<!-- <div class="prod-info">
+    <div class="img"><img src="assets/Electronics/iphone15.jpg"></div>
+    <div class="header">
+        <h3>{{product.productname}}</h3>
+    </div>
+</div> -->
+
+<section class="overflow-hidden prod-info">
+  <div class="mx-auto max-w-5xl px-5 py-20 flex items-center"> <!-- Added flex container -->
+    <div class="lg:w-1/2 lg:pl-10"> <!-- Adjusted width for better responsiveness -->
+      <!-- <h1 class="mb-1 text-3xl font-semibold text-black prodname info">{{product.productname}}</h1>
+      
+      <h1 class="mb-1 text-3xl font-semibold text-black">{{product.description}}</h1>
+      <h1 class="mb-1 text-3xl font-semibold text-black">{{product.price|currency:'INR'}}</h1>  -->
+      <!-- <h1>Product ID: {{product.productid}}</h1>
+      <h1>Product: {{product.productname}}</h1>
+      <h2>Description: {{product.description}}</h2>
+      <h1>Price: {{product.price|currency:'INR'}}</h1>
+      <h2>Size: </h2>
+          <ul style="list-style: circle;" *ngIf="product.size[0] !== 'standard'">
+            <li *ngFor="let s1 of product.size">{{s1}}</li>
+          </ul><br>
+
+      <h2>Color: </h2>
+          <ul style="list-style: circle;" *ngIf="product.color[0] !== 'standard'">
+            <li *ngFor="let c1 of product.color">{{c1}}</li>
+          </ul> -->
+          <table class="prod-content">
+            <tr>
+              <th>Product ID: </th>
+              <td>{{product.productid}}</td>
+            </tr>
+            <tr>
+              <th>Product: </th>
+              <td>{{product.productname}}</td>
+            </tr>
+            <tr>
+              <th>Description: </th>
+              <td>{{product.description}}</td>
+            </tr>
+            <tr>
+              <th>Price: </th>
+              <td>{{product.price|currency:'INR'}}</td>
+            </tr>
+            <tr>
+              <th>Size: </th>
+              <td><ul style="list-style: circle;" *ngIf="product.size[0] !== 'standard'">
+                <li *ngFor="let s1 of product.size">{{s1}}</li>
+              </ul></td>
+            </tr>
+            <tr>
+              <th>Color: </th>
+              <td><ul style="list-style: circle;" *ngIf="product.color[0] !== 'standard'">
+                <li *ngFor="let c1 of product.color">{{c1}}</li>
+              </ul></td>
+            </tr>
+          </table>
+      <button
+        type="button"
+        class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+      >
+        Edit
+      </button>
+    </div>
+    <div>
+      <img
+        alt="Nike Air Max 21A"
+        class="h-64 w-full rounded object-filled lg:h-96 lg:w-1/2"
+        [src]="product.imageFile.filePath"
+      />
+    </div>
+  </div>
+</section>

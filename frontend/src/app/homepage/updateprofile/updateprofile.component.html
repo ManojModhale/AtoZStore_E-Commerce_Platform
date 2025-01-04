@@ -1,0 +1,61 @@
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<div class="input-group">
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="user.firstname" name="firstname">
+            <mat-icon matSuffix>name</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="user.lastname" name="lastname">
+            <mat-icon matSuffix>name</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-full p-2" appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input matInput [(ngModel)]="user.contactno" name="phoneno">
+            <mat-icon matSuffix>phone</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-full p-2" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="user.email" name="email">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-full p-2" appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput [(ngModel)]="user.age" name="age">
+            <mat-icon matSuffix>Age</mat-icon>
+          </mat-form-field>
+          <select class="w-full border-3 text-xl p-2 form-select-md mb-3" aria-label="Large select example" [(ngModel)]="user.gender" name="gender">
+
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+
+
+
+
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Sav click')">Cancel</button>
+
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Update</button>
+
+<hr />
+
+

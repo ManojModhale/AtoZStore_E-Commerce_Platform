@@ -1,0 +1,136 @@
+
+<ng-template #content let-modal >
+
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Vendor Profile update</h4>
+		<button type="button"  class="btn-close btn-danger text-white" aria-label="Close" (click)="modal.dismiss('Cross click')"><i class="fa fa-times"></i></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+        <h1>Personal Details</h1>
+
+				<div class="input-group">
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.firstname" name="firstname">
+            <mat-icon matSuffix>name</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.lastname" name="lastname">
+            <mat-icon matSuffix>name</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.contactno" name="phoneno">
+            <mat-icon matSuffix>phone</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.email" name="email">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.age" name="age">
+            <mat-icon matSuffix>Age</mat-icon>
+          </mat-form-field>
+
+
+
+          <select class="w-full border-3 text-xl p-2 form-select-md mb-3" aria-label="Large select example" [(ngModel)]="deliveryPartner.gender" name="gender">
+
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+
+          <h1>Delievery Partner Details</h1>
+
+  <div>
+          <mat-form-field class="w-full p-2" appearance="fill">
+            <mat-label>Vehicle Registration No</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.vehicleRegNumber" name="vehicleRegNumber">
+            <mat-icon matSuffix>vehicleRegNumber</mat-icon>
+          </mat-form-field>
+
+
+
+          <select class="w-full border-3 text-xl p-2 form-select-md mb-3" aria-label="Large select example" [(ngModel)]="deliveryPartner.vehicleType" name="vehicleType">
+
+
+            <option value="Car ">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Bicycle">Bicycle</option>
+
+
+          </select>
+
+</div>
+
+
+<div>
+  <h1>Address</h1>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Street</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.shippingAddress.street" name="street">
+            <mat-icon matSuffix>street</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>State</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.shippingAddress.state" name="state">
+            <mat-icon matSuffix>state</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.shippingAddress.city" name="city">
+            <mat-icon matSuffix>city</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Country</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.shippingAddress.country" name="country">
+            <mat-icon matSuffix>country</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Pincode</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.shippingAddress.pincode" name="pincode">
+            <mat-icon matSuffix>pincode</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Landmark</mat-label>
+            <input matInput [(ngModel)]="deliveryPartner.shippingAddress.landMark" name="landmark">
+            <mat-icon matSuffix>landmark</mat-icon>
+          </mat-form-field>
+
+          </div>
+
+
+
+
+				</div>
+
+
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Sav click')">Cancel</button>
+
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+	</div>
+
+</ng-template>
+
+
+<button class="btn btn-lg btn-outline-primary" data-target="#staticBackdrop" (click)="open(content)">Update</button>
+
+<hr />
+
+
+

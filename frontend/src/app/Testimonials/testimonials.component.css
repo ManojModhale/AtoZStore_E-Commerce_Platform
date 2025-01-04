@@ -1,0 +1,155 @@
+
+:root {
+    --primary: #06BBCC;
+    --light: #F0FBFC;
+    --dark: #181d38;
+  }
+
+
+  .testimonials{
+    padding: 1rem 15%;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  .card-group {
+    display: flex;
+    /* margin: 1rem 1rem 1rem 2rem; */
+    gap: 20px;
+    width: 100%;
+  }
+  /*** Section Title ***/
+  .section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background:  #06BBCC;
+    z-index: -1;
+  }
+
+  .section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background:  #06BBCC;
+    z-index: -1;
+  }
+
+  .section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+  }
+
+  .section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+  }
+
+
+  .cards {
+    width: 100%;
+    flex-wrap: wrap;
+
+
+
+  }
+
+  .card {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: start;
+    flex-wrap: wrap;
+    border-radius: 10px;
+
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    text-align: start;
+  }
+
+  .card-title {
+    margin-bottom: 5px;
+    text-align: start;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #06BBCC;
+
+
+  }
+  .role{
+    text-align: start;
+
+  }
+
+  .card-text {
+    font-style: italic;
+    color: #555;
+     box-sizing: border-box;
+    background-color: rgb(226, 239, 226);
+    padding: 1.3rem;
+
+  }
+
+  .fa-quote-left {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+
+
+  /*** Service ***/
+  .service-item {
+    background: var(--light);
+    transition: .5s;
+  }
+
+  .service-item:hover {
+    margin-top: -10px;
+    background: var(--primary);
+  }
+
+  .service-item * {
+    transition: .5s;
+  }
+
+  .service-item:hover * {
+    color: var(--light) !important;
+  }
+  /* Add this to your global styles or component-specific styles */
+  .ngb-carousel .carousel-control-prev,
+  .ngb-carousel .carousel-control-next {
+    color: #ffffff; /* Change the text color */
+    font-size: 24px; /* Adjust font size as needed */
+    background-color: #3498db; /* Change the background color */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+  }
+
+  /* Optional: Hover effect */
+  .ngb-carousel .carousel-control-prev:hover,
+  .ngb-carousel .carousel-control-next:hover {
+    background-color: #217dbb; /* Change the background color on hover */
+  }

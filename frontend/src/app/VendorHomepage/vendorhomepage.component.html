@@ -1,0 +1,82 @@
+<div >
+  <mat-toolbar class="navbar py-2">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <a (click)="vendorpage()" class="text-decoration-none">
+        <span class="font-bold ml-4 logo"><i class="fa-solid mr-3 fa-cart-shopping fa-xl"></i>AtoZStore</span>
+      </a>
+
+      <div fxShow="true" fxHide.lt-md fxLayout="row" fxLayoutAlign="end center" class=" mr-5">
+
+
+       <a routerLink="addproduct"> <button class="btn btn-primary add" >Add Product</button></a>
+
+
+
+
+
+
+
+        <div mdbDropdown class="dropdown" style="color: white;">
+          <button
+            class="btn dropdown-toggle"
+            type="button"
+            id="dropdownMenu2"
+            mdbDropdownToggle
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user  fa-2xl icon1"></i>
+          </button>
+          <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+              <a routerLink="vendorprofile" class="dropdown-item">
+                View Profile <i class="fa-solid fa-eye  ml-2"></i>
+              </a>
+            </li>
+            <li>
+              <button (click)="logout()" class="dropdown-item" type="button">Logout <i class="fa-solid fa-sign-out"></i></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <!-- User Dropdown Button (Mobile Version) -->
+        <div mdbDropdown class="dropdown" >
+          <button
+            class="btn dropdown-toggle"
+            type="button"
+            id="dropdownMenu2"
+            mdbDropdownToggle
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user  fa-2xl"></i>
+          </button>
+          <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+              <a routerLink="profile" class="dropdown-item">View Profile <i class="fa-solid fa-eye  ml-2"></i></a>
+            </li>
+            <li>
+              <button class="dropdown-item" type="button">Logout <i class="fa-solid fa-sign-out"></i></button>
+            </li>
+            <li></li>
+          </ul>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+

@@ -1,0 +1,14 @@
+.radiobutton{
+  display: flex;
+  gap: 2px;
+
+  font-size: 1rem;
+
+  align-items: center;
+
+  }
+  .radiobutton input, .radiobutton label {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }

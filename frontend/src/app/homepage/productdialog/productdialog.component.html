@@ -1,0 +1,117 @@
+<section class="overflow-hidden">
+  <div class="mx-auto max-w-5xl px-5 py-20">
+    <div class="mx-auto flex flex-wrap items-center lg:w-4/5">
+      <img
+        alt="Nike Air Max 21A"
+        class="h-64 w-full rounded object-fill lg:h-96 lg:w-1/2"
+        [src]="data.imageFile.filePath"
+      />
+      <div class=" w-full lg:mt-0 lg:w-1/2 lg:pl-10">
+
+        <h1 class="mb-1 text-3xl font-semibold text-black">{{data.productname}}</h1>
+
+        <p class="leading-relaxed">
+         {{data.description}}
+        </p>
+        <div class=" mt-2 flex items-center   ">
+          <ng-container *ngIf="!data.colors.includes('Standard') && !data.colors.includes('standard')">
+
+            <span class="block text-sm font-semibold">Colors :</span>
+      <br>
+            <div class="mt-1 flex items-center gap-2 colors">
+              <div class="radiobutton flex items-center" *ngFor="let color of data.colors; let i = index">
+                <div class="" >
+                  <input type="radio" name="color" [id]="'color_' + i" [value]="color" [(ngModel)]="selectedColor" class="mr-1">
+                  <label [for]="'color_' + i">{{color}}</label>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+
+        </div>
+
+        <ng-container class="d-flex" *ngIf="!data.sizes.includes('Standard') && !data.sizes.includes('standard')">
+          <div class="flex items-center mt-1">
+            <span class="block text-sm font-semibold mr-2">Size: </span>
+
+            <div class="relative">
+              <select class="appearance-none rounded border border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-black
+                  focus:outline-none focus:ring-2 focus:ring-black"
+                  (change)="onSizeSelected($event)"
+              >
+                <option [value]="size" *ngFor="let size of data.sizes">{{size}}</option>
+              </select>
+              <span class="pointer-events-none absolute right-0 top-0 flex h-full w-10 items-center justify-center text-center text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </ng-container>
+
+
+
+
+        <div class="flex mt-2 items-center justify-between">
+
+
+          <div class="price" *ngIf="data.offer!=='null'  else nodiscount">
+            <div class="d-flex align-items-center gap-2 border-black" >
+              <h2>  {{ data.price | calculatepricepipe:data.offer | currency:'INR':'symbol':'1.2-2' }}</h2>
+           <h5 class="d-flex align-items-center gap-2" > <span class="text-decoration-line-through">₹{{ data.price  }}</span></h5>
+            </div>
+            <span style="position: relative; bottom: 8px;"> ({{data.offer}} Off) </span>
+
+           </div>
+        <ng-template #nodiscount>
+        <h2>{{ data.price | currency:'INR':'symbol':'1.2-2'  }}</h2>
+
+        </ng-template>
+        <div *ngIf="!isPresentInCart else presentInCart">
+          <button
+            type="button"
+            class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+          (click)="addToCart(data)"
+          *ngIf="!addingToCart else addingtocart"
+
+            >
+            Add to Cart
+          </button>
+          <ng-template #addingtocart>
+            <button class="btn bg-black rounded-md bg-black px-3 py-2 text-sm  text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blac" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+              <span role="status" class="text-capitalize">Adding...</span>
+            </button>
+          </ng-template>
+          </div>
+          <ng-template #presentInCart>
+            <button
+            type="button"
+            class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            (click)="goToCart()"
+
+            >
+            View In Cart
+          </button>
+          </ng-template>
+        </div>
+        <div *ngIf="isPresentInCart">
+             This product is already in cart
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

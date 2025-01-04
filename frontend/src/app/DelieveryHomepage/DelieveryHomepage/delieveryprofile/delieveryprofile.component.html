@@ -1,0 +1,39 @@
+<mat-card class="card">
+    <mat-card-content>
+      <h1 >Delievery Partner Profile details</h1>
+      <div class="container text-center ">
+        <div class="container d-flex flex-col justify-content-center align-items-center mt-5">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx79eHhzBlLGuePKDPceIL7JT7-zydKSHupcuEQ1SHVA&s" class="profile-image" alt="">
+          <h1 class="mt-3">{{deliveryPartner.firstname}} {{deliveryPartner.lastname}}</h1>
+          <h1 class="mt-3">{{deliveryPartner.street}} {{deliveryPartner.city}} {{deliveryPartner.state}} {{deliveryPartner.pincode}}</h1>
+
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-10  offset-md-2 offset-sm-1">
+                <table class="table col-sm-3">
+                  <tr><td>Username</td><td>{{deliveryPartner.username}}</td></tr>
+                  <tr><td>Gender</td><td>{{deliveryPartner.gender}}</td></tr>
+                  <tr><td>Age</td><td>{{deliveryPartner.age}}</td></tr><br>
+                  <tr><td>Email</td><td>{{deliveryPartner.email}}</td></tr>
+                  <tr><td>Contact Number</td><td>{{deliveryPartner.contactno}}</td></tr><br>
+
+                  <h1>Delievery Partner Details</h1>
+                  <tr><td>Vehicle</td><td>{{deliveryPartner.vehicleType}}</td></tr>
+                  <tr><td>Vehicle Registration Number</td><td>{{deliveryPartner.vehicleRegNumber}}</td></tr>
+
+                  <h1 >Address</h1>
+                  <tr><td>Address</td><td> {{deliveryPartner.shippingAddress.street}} {{deliveryPartner.shippingAddress.city}} {{deliveryPartner.shippingAddress.state}} {{deliveryPartner.shippingAddress.pincode}}
+                  </td></tr>
+
+                </table>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="btns ">
+      <app-updatedelieveryprofile (deliveryPartnerUpdated)="updateUser($event)"  ></app-updatedelieveryprofile>
+
+
+
+    </mat-card-actions>
+  </mat-card>

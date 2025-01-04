@@ -1,0 +1,51 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+<div class="container px-4 py-5 mx-auto">
+    <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+            <div class="card card1">
+                <div class="row justify-content-center my-auto">
+                    <div class="col-md-8 col-10 my-5">
+                        <div class="row justify-content-center px-3 mb-3">
+                            <span class="logo d-flex align-items-center">
+                                <i class="fa fa-3x fa-shopping-bag mr-2"></i>
+                                <span class="font-weight-bold " style="font-size: 2rem;">AtoZStore</span> 
+                            </span>
+                        </div>
+                        <br>
+                        <h2 class="mb-5 text-center heading" style="font-size: 2rem;">Admin Login</h2>
+                        <form  (ngSubmit)="authenticateAdmin()" #adminForm="ngForm">
+                        <div class="form-group">
+                            <label class="form-control-label font-bold text-muted" style="letter-spacing: 1px; font-size: 1rem;">Admin Username</label>
+                            <input type="text" id="username" name="username" [(ngModel)]="username" required placeholder="Enter Username" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-control-label font-bold text-muted" style="letter-spacing: 1px; font-size: 1rem;">Admin Password</label>
+                            <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Enter Password" class="form-control">
+                        </div>
+
+                        <div class="row justify-content-center my-3 px-3">
+                            <button class="btn-block btn-color"  [disabled]="!adminForm.valid" type="submit">Login</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card card2">
+                <div class="my-auto mx-md-5 px-md-5 right">
+                    <h1 class="text-white font-weight-bold">Welcome Admin!</h1>
+                    <small class="text-white" style="font-size: 1rem;">As an administrator, you have access to advanced features and functionalities to manage 
+                        the system effectively. Please proceed with your login to access the admin dashboard.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+

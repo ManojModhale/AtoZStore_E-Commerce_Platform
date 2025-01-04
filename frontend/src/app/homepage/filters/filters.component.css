@@ -1,0 +1,416 @@
+/* General Styles */
+.w-full {
+  width: 100%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.lg\:px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+/* Flex Container Styles */
+.md:flex {
+  display: flex;
+}
+
+.md:flex-row {
+  flex-direction: row;
+}
+
+.md:items-start {
+  align-items: flex-start;
+}
+
+.md:justify-between {
+  justify-content: space-between;
+}
+
+/* Heading Styles */
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+/* Button Styles */
+.hidden {
+  display: none;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-black {
+  color: #000;
+}
+
+.focus-visible\:outline {
+  outline: 2px solid transparent;
+}
+
+.focus-visible\:outline-2 {
+  outline-width: 2px;
+}
+
+.focus-visible\:outline-offset-2 {
+  outline-offset: 2px;
+}
+
+.focus-visible\:outline-black:focus {
+  outline-color: #000;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.lg:inline-flex {
+  display: inline-flex;
+}
+
+/* SVG Icon Styles */
+.h-4 {
+  height: 1rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+/* Horizontal Line Styles */
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-width: 1px;
+  border-color: #e5e7eb;
+}
+
+/* Grid Styles */
+.lg\:grid {
+  display: grid;
+}
+
+.lg\:grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.lg\:gap-x-6 {
+  column-gap: 1.5rem;
+}
+
+/* Responsive Styles */
+.hidden {
+  display: none;
+}
+
+.lg\:block {
+  display: block;
+}
+
+.lg\:col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.lg\:h-full {
+  height: 100%;
+}
+
+/* Checkbox Styles */
+.h-4 {
+  height: 1rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.rounded {
+  border-radius: 0.375rem;
+}
+
+.border-gray-300 {
+  border-color: #e5e7eb;
+}
+
+.text-gray-900 {
+  color: #1f2937;
+}
+
+.focus\:ring-black:focus {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+/* List Styles */
+.space-y-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.divide-y {
+  border-bottom-width: 1px;
+  border-color: #e5e7eb;
+}
+
+/* Additional Styles */
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+/* Input Styles */
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+/* Height Styles */
+.h-800 {
+  height: 25rem;
+}
+
+/* Border Styles */
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+/* Width Styles */
+.w-full {
+  width: 100%;
+}
+
+/* Add this to your existing CSS file */
+
+.filters {
+  background-color: #f7f7f7;
+  padding: 1rem;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* Styling for Filter Categories */
+  div.my-2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Verdana', 'Arial', sans-serif;
+  }
+
+  input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    margin-right: 8px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Styling for Checkboxes and Labels */
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    margin-right: 8px;
+    border: 2px solid #007bff;
+    transition: background-color 0.3s ease;
+  }
+
+  .form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  /* Additional Styling for Brand, Price Filter, and Search Form */
+  form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[name="minprice"],
+  input[name="maxprice"],
+  input[type="submit"] {
+    margin-bottom: 0.15rem; /* Reduced margin */
+    padding: 0.25rem; /* Reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+ /* Additional Styling for Search Button */
+button[type="submit"] {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+}
+
+/* Add this to your existing CSS file */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .md:flex {
+    flex-direction: column;
+  }
+
+  .md:flex-shrink-0 {
+    width: 100%; /* Full width for the filter div on small screens */
+    margin-bottom: 1rem; /* Add space between filter and product display */
+  }
+
+  .md:w-1/6 {
+    width: 100%; /* Full width for the filter div on small screens */
+  }
+
+  .md:flex-grow {
+    width: 100%; /* Full width for the product display on small screens */
+  }
+
+  .products {
+    margin-left: 0; /* Remove the margin for product display on small screens */
+  }
+  .filters{
+
+  }
+}
+
+/* Bootstrap Container Classes */
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+/* Bootstrap Flex Classes */
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+/* Bootstrap Margin Classes */
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+
+
+
+/* Custom Styles for Product Display
+.products {
+  margin-left: 1.5rem;
+}
+
+.prodbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.product-card {
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  background-color: beige;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-id {
+  color: #888;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: blueviolet;
+  text-decoration: underline;
+}
+
+.product-quantity,
+.product-price{
+  color: #4CAF50;
+  margin-top: 10px;
+}
+.product-description {
+  margin-top: 10px;
+  color: #888;
+}
+*/

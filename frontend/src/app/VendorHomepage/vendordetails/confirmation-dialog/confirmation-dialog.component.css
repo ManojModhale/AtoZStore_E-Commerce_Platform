@@ -1,0 +1,9 @@
+.btns {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+/* Optional: Add margin-top to create space between content and buttons */
+.mat-dialog-actions {
+  margin-top: 20px; /* Adjust as needed */
+}

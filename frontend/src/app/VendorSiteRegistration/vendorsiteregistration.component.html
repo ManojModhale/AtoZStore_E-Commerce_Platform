@@ -1,0 +1,312 @@
+<div  class="register-box mx-auto mt-3 ">
+    <div class="row d-flex justify-content-center  ">
+      <div class="col-12 col-md-6 col-lg-6 mx-auto p-5 border f1">
+        <h2 class="mb-5 text-center text-white " style="font-family: monospace; letter-spacing: 2px; font-weight: 500;">Vendor's Registration</h2>
+
+        <form  id="signin" (ngSubmit)="handleSubmit()" (ngReset)="handleReset()" [formGroup]="signin">
+          <div class="row  ">
+            <h2>Personal Information</h2>
+            <input hidden matInput placeholder="" value="Denied" formControlName="status" id="status" type="text">
+            <div class="col-6">
+
+              <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <div class="full-width" [ngClass]="{ 'has-danger': firstname.invalid && (firstname.dirty || firstname.touched), 'has-success': firstname.valid && (firstname.dirty || firstname.touched) }">
+                  <input matInput placeholder="" formControlName="firstname" id="firstname" type="text">
+                </div>
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="firstname.errors && (firstname.dirty || firstname.touched)">
+                <p *ngIf="firstname.errors.required">Firstname is required</p>
+                <p *ngIf="firstname.errors?.pattern">Firstname Must be Capitalize without Space</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <div class="" [ngClass]="{ 'has-danger': lastname.invalid && (lastname.dirty || lastname.touched), 'has-success': lastname.valid && (lastname.dirty || lastname.touched) }">
+                  <input matInput placeholder="" formControlName="lastname" type="text">
+                </div>
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">
+                <p *ngIf="lastname.errors.required">Lastname is required</p>
+                <p *ngIf="lastname.errors?.pattern">Lastname Must be Capitalize without Space</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field class="full-width">
+                <mat-label>Gender</mat-label>
+                <div [ngClass]="{ 'has-danger': gender.invalid && (gender.dirty || gender.touched), 'has-success': gender.valid && (gender.dirty || gender.touched) }">
+                  <mat-select formControlName="gender">
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                  </mat-select>
+                </div>
+                <mat-icon matSuffix>gender</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="gender.errors && (gender.dirty || gender.touched)">
+                <p *ngIf="gender.errors.required">Gender is required</p>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <mat-form-field class="full-width">
+                <mat-label>Age</mat-label>
+                <div class="" [ngClass]="{ 'has-danger': age.invalid && (age.dirty || age.touched), 'has-success': age.valid && (age.dirty || age.touched) }">
+                  <input matInput placeholder="" formControlName="age" type="number">
+                </div>
+                <mat-icon matSuffix>age</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="age.errors && (age.dirty || age.touched)">
+                <p *ngIf="age.errors.required">Age is required</p>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field class="full-width" >
+                <mat-label>Email</mat-label>
+                <div class="form-group" [ngClass]="{ 'has-danger': email.invalid && (email.dirty || email.touched),
+              'has-success': email.valid && (email.dirty || email.touched)  }">
+                <input matInput placeholder="" formControlName="email" type="email">
+                </div>
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback"  [ngClass]="'has-danger'"  *ngIf="email.errors && (email.dirty || email.touched)">
+                <p *ngIf="email.errors.required">Email is required</p>
+            </div>
+            </div>
+
+
+
+            <div class="col-6">
+              <mat-form-field class="full-width" >
+                <mat-label>Contact No.</mat-label>
+                <div class="form-group" [ngClass]="{ 'has-danger': contactno.invalid && (contactno.dirty || contactno.touched),
+              'has-success': contactno.valid && (contactno.dirty || contactno.touched)  }">
+                <input matInput placeholder="" formControlName="contactno" type="number">
+              </div>
+                <mat-icon matSuffix>phone</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="contactno.errors && (contactno.dirty || contactno.touched)">
+                <p *ngIf="contactno.errors?.required">Contact Number is required</p>
+                <p *ngIf="contactno.errors?.pattern">Please enter a valid 10-digit Mobile Number</p>
+            </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field class="full-width" >
+                <mat-label>User Name</mat-label>
+                <div class="form-group" [ngClass]="{ 'has-danger': username.invalid && (username.dirty || username.touched),
+                'has-success': username.valid && (username.dirty || username.touched)  }">
+                <input matInput placeholder="" formControlName="username" type="text">
+                </div>
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="username.errors && (username.dirty || username.touched)">
+                <p *ngIf="username.errors.required">username is required</p>
+                <p *ngIf="username.errors?.pattern">username Must be Capitalize without Space</p>
+            </div>
+            </div>
+
+
+
+
+            <div class="col-6">
+              <mat-form-field class="full-width" >
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="" formControlName="password" type="password">
+                <mat-icon matSuffix>password</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="password.errors && (password.dirty || password.touched)">
+                <p *ngIf="password.errors?.required">Password is required</p>
+
+                <p *ngIf="password.errors?.minlength">Password must be 8 characters long, we need another
+                    {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}} characters
+                </p>
+
+                <p *ngIf="password.errors?.pattern">The Password must contain one at least Uppercase, Lowercase, Digit &
+                    Special character</p>
+            </div>
+            </div>
+            </div>
+
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field class="full-width" >
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="" formControlName="confirmpass" type="password">
+                <mat-icon matSuffix>confirmpass</mat-icon>
+              </mat-form-field>
+
+              <div class="form-group" [ngClass]="{'has-danger': confirmpass.invalid && (confirmpass.dirty || confirmpass.touched),
+              'has-success': confirmpass.valid && (confirmpass.dirty || confirmpass.touched) }">
+
+          <div class="form-control-feedback" *ngIf="confirmpass.errors && (confirmpass.dirty || confirmpass.touched)">
+                  <p *ngIf="confirmpass.errors?.required">Confirm Password is required</p>
+                  <p *ngIf="confirmpass.errors?.passwordMismatch">Passwords do not match</p>
+          </div>
+            </div>
+          </div>
+
+
+          <h2>Company Details</h2>
+
+          <div class="col-6">
+
+            <mat-form-field class="full-width">
+              <mat-label>Company Name</mat-label>
+              <div class="full-width" [ngClass]="{ 'has-danger': companyname.invalid && (companyname.dirty || companyname.touched), 'has-success': companyname.valid && (companyname.dirty || companyname.touched) }">
+                <input matInput placeholder="" formControlName="companyname" id="companyname" type="text">
+              </div>
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="companyname.errors && (companyname.dirty || companyname.touched)">
+              <p *ngIf="companyname.errors.required">Company name is required</p>
+            </div>
+          </div>
+
+
+          <div class="col-6">
+            <mat-form-field class="full-width">
+              <mat-label>Company Type</mat-label>
+              <mat-select placeholder="Select Category" formControlName="companytype" id="companytype">
+                <mat-option value="Private ltd">Private ltd</mat-option>
+                <mat-option value="Public">Public</mat-option>
+                <mat-option value="StartUp">StartUp</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+            <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="companytype.errors && (companytype.dirty || companytype.touched)">
+              <p *ngIf="companyname.errors.required">Company Type is required</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field class="full-width" >
+              <mat-label>Contact No.</mat-label>
+              <div class="form-group" [ngClass]="{ 'has-danger': contactno.invalid && (contactno.dirty || contactno.touched),
+            'has-success': contactno.valid && (contactno.dirty || contactno.touched)  }">
+              <input matInput placeholder="" formControlName="contactno" type="number">
+            </div>
+              <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+            <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="contactno.errors && (contactno.dirty || contactno.touched)">
+              <p *ngIf="contactno.errors?.required">Contact Number is required</p>
+              <p *ngIf="contactno.errors?.pattern">Please enter a valid 10-digit Mobile Number</p>
+          </div>
+          </div>
+
+
+            <div class="col-6">
+              <mat-form-field class="full-width" >
+                <mat-label>Email</mat-label>
+                <div class="form-group" [ngClass]="{ 'has-danger': email.invalid && (email.dirty || email.touched),
+              'has-success': email.valid && (email.dirty || email.touched)  }">
+                <input matInput placeholder="" formControlName="email" type="email">
+                </div>
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+              <div class="form-control-feedback"  [ngClass]="'has-danger'"  *ngIf="email.errors && (email.dirty || email.touched)">
+                <p *ngIf="email.errors.required">Email is required</p>
+            </div>
+            </div>
+
+
+            <h2>Shipping Address</h2>
+            <div class="row">
+              <div class="col-6">
+                <mat-form-field class="full-width" >
+                  <mat-label>Street</mat-label>
+                  <input matInput placeholder="" formControlName="street" type="text">
+                </mat-form-field>
+                <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="street.errors && (street.dirty || street.touched)">
+                  <p *ngIf="street.errors.required">street is required</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <mat-form-field class="full-width" >
+                  <mat-label>City</mat-label>
+                  <input matInput placeholder="" formControlName="city" type="text">
+                </mat-form-field>
+                <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="city.errors && (city.dirty || city.touched)">
+                  <p *ngIf="city.errors.required">City is required</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <mat-form-field class="full-width" >
+                  <mat-label>State</mat-label>
+                  <input matInput placeholder="" formControlName="state" type="text">
+                </mat-form-field>
+                <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="state.errors && (state.dirty || state.touched)">
+                  <p *ngIf="state.errors.required">State is required</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <mat-form-field class="full-width" >
+                  <mat-label>Landmark</mat-label>
+                  <input matInput placeholder="" formControlName="landmark" type="text">
+                </mat-form-field>
+                <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="landmark.errors && (landmark.dirty || landmark.touched)">
+                  <p *ngIf="landmark.errors.required">Landmark is required</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <mat-form-field class="full-width" >
+                  <mat-label>Country</mat-label>
+                  <input matInput placeholder="" formControlName="country" type="text">
+                </mat-form-field>
+                <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="country.errors && (country.dirty || country.touched)">
+                  <p *ngIf="country.errors.required">Country is required</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <mat-form-field class="full-width" >
+                  <mat-label>Pin Code</mat-label>
+                  <input matInput placeholder="" formControlName="pincode" type="text">
+                </mat-form-field>
+                <div class="form-control-feedback" [ngClass]="'has-danger'" *ngIf="pincode.errors && (pincode.dirty || pincode.touched)">
+                  <p *ngIf="pincode.errors.required">pincode is required</p>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+          <div class="row">
+            <div class="vol text-center">
+              <button mat-raised-button  [disabled]="!signin.valid" class="full-width btn-primary"  type="submit">Submit</button>
+            </div>
+          </div>
+          </div>
+          <div class="d-flex align-items-center text-white flex-col gap-2 mt-5">
+            <span>
+             <p>  Are you a Customer?  <a routerLink="/signin" class=" btn btn-primary btn-sm text-capitalize" id="forgotpassword">Register Here</a></p>
+          </span>
+          <span>Or</span>
+          <span>
+            <p>Are You a Delivery Partner ? <a routerLink="/delieverysignup" class=" btn btn-primary btn-sm text-capitalize" id="new-user">Register here</a></p>
+          </span>
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>

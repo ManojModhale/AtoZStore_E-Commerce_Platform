@@ -1,0 +1,131 @@
+<ng-template #content let-modal >
+
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Vendor Profile update</h4>
+		<button type="button" class="btn-close bg-danger text-white" aria-label="Close" (click)="modal.dismiss('Cross click')"><i class="fa fa-times"></i></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+        <h1>Personal Details</h1>
+
+				<div class="input-group">
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="vendor.firstname" name="firstname">
+            <mat-icon matSuffix>name</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="vendor.lastname" name="lastname">
+            <mat-icon matSuffix>name</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input matInput [(ngModel)]="vendor.contactno" name="phoneno">
+            <mat-icon matSuffix>phone</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="vendor.email" name="email">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput [(ngModel)]="vendor.age" name="age">
+            <mat-icon matSuffix>Age</mat-icon>
+          </mat-form-field>
+
+
+
+          <select class="w-full border-3 text-xl p-2 form-select-md mb-3" aria-label="Large select example" [(ngModel)]="vendor.gender" name="gender">
+
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+
+          <h1>Company Details</h1>
+
+  <div>
+          <mat-form-field class="w-full p-2" appearance="fill">
+            <mat-label>Company Name</mat-label>
+            <input matInput [(ngModel)]="vendor.companyname" name="companyname">
+            <mat-icon matSuffix>companyname</mat-icon>
+          </mat-form-field>
+
+
+
+          <select class="w-full border-3 text-xl p-2 form-select-md mb-3" aria-label="Large select example" [(ngModel)]="vendor.companytype" name="companytype">
+            <mat-label>Company Type</mat-label>
+
+            <option value="Private ltd">Private ltd</option>
+            <option value="Public">Public</option>
+            <option value="StartUp">StartUp</option>
+            <mat-icon matSuffix>Company Type</mat-icon>
+
+          </select>
+
+</div>
+
+
+<div>
+  <h1>Address</h1>
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Street</mat-label>
+            <input matInput [(ngModel)]="vendor.address.street" name="street">
+            <mat-icon matSuffix>street</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>State</mat-label>
+            <input matInput [(ngModel)]="vendor.address.state" name="state">
+            <mat-icon matSuffix>state</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput [(ngModel)]="vendor.address.city" name="city">
+            <mat-icon matSuffix>city</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Country</mat-label>
+            <input matInput [(ngModel)]="vendor.address.country" name="country">
+            <mat-icon matSuffix>place</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Pincode</mat-label>
+            <input matInput [(ngModel)]="vendor.address.pincode" name="pincode">
+            <mat-icon matSuffix>pincode</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="w-1/2 p-2" appearance="fill">
+            <mat-label>Landmark</mat-label>
+            <input matInput [(ngModel)]="vendor.address.landMark" name="landmark">
+            <mat-icon matSuffix>landmark</mat-icon>
+          </mat-form-field>
+
+          </div>
+
+
+
+
+				</div>
+
+
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Sav click')">Cancel</button>
+
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+	</div>
+
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Update</button>
+
+<hr />

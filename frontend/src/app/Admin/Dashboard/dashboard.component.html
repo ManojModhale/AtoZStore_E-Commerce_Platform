@@ -1,0 +1,163 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Admin Dashboard</h1>
+</mat-toolbar>
+<mat-sidenav-container autosize="true">
+    <mat-sidenav [ngClass]="!isCollapsed ? 'expanded' : ''" [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
+        <mat-nav-list>
+          <a mat-list-item (click)="showCustomers()">
+            <span class="entry">
+                <mat-icon>people</mat-icon>
+                <span *ngIf="!isCollapsed">Customers</span>
+            </span>
+        </a>        
+            <a mat-list-item (click)="showDeliveryPartners()">
+                <span class="entry">
+                    <mat-icon>local_shipping</mat-icon>
+                    <span *ngIf="!isCollapsed">Delivery Partners</span>
+                </span>
+            </a>
+            <a mat-list-item (click)="showVendors()">
+                <span class="entry">
+                    <mat-icon>store</mat-icon>
+                    <span *ngIf="!isCollapsed">Vendors</span>
+                </span>
+            </a>
+            <a mat-list-item (click)="logoutAdmin()">
+              <span class="entry">
+                <mat-icon>logout</mat-icon>
+                  <span *ngIf="!isCollapsed">Logout</span>
+              </span>
+          </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <!-- vendor -->
+        <section id="vendor"  *ngIf="isVendor && (!isDelivery && !isCustomer)">
+            <h2 class="section_heading" align="center">Vendors List</h2>
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Username</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let v of vendors">
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <img *ngIf="v.gender === 'Male'" 
+                            src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                            alt=""
+                            style="width: 45px; height: 45px"
+                            class="rounded-circle"
+                            />
+                            <img *ngIf="v.gender === 'Female'" 
+              src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+              class="rounded-circle"
+              alt=""
+              style="width: 45px; height: 45px"
+              />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{v.firstname}} {{v.lastname}}</p>
+                          <p class="text-muted mb-0">{{v.email}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">{{v.companyname}}</p>
+                      <p class="text-muted mb-0">{{v.companytype}}</p>
+                    </td>
+                    <td>
+                        <span *ngIf="v.status === 'Accept'" class="badge badge-success rounded-pill d-inline">Accept</span><br>
+                        <span *ngIf="v.status === 'Denied'" class="badge badge-danger rounded-pill d-inline">Denied</span>
+                        
+                    </td>
+                    <td>{{v.username}}</td>
+                    <td>
+                        <mat-form-field>
+                            <mat-label>Actions</mat-label>
+                            <mat-select (selectionChange)="makeVendorAccept($event, v.username)" [(ngModel)]="vendorStatus">
+                                <mat-option value="Accept">Accept</mat-option>
+                                <mat-option value="Denied">Denied</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </section>
+        <!-- delivery -->
+        
+        <section id="delivery"  *ngIf="isDelivery && (!isVendor && !isCustomer)">
+            <h2 class="section_heading" align="center">Delivery Partners List</h2>
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Name</th>
+                    <th>Vehicle</th>
+                    <th>Status</th>
+                    <th>Username</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of deliveryPartners">
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <img *ngIf="d.gender === 'Male'" 
+                            src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                            alt=""
+                            style="width: 45px; height: 45px"
+                            class="rounded-circle"
+                            />
+                            <img *ngIf="d.gender === 'Female'" 
+              src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+              class="rounded-circle"
+              alt=""
+              style="width: 45px; height: 45px"
+              />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{d.firstname}} {{d.lastname}}</p>
+                              <p class="text-muted mb-0">{{d.email}}</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="fw-normal mb-1">{{d.vehicleType}}</p>
+                          <p class="text-muted mb-0">{{d.vehicleRegNumber}}</p>
+                        </td>
+                        <td>
+                            <span *ngIf="d.status === 'Accept'" class="badge badge-success rounded-pill d-inline">Accept</span><br>
+                            <span *ngIf="d.status === 'Denied'" class="badge badge-danger rounded-pill d-inline">Denied</span>
+                            
+                        </td>
+                        <td>{{d.username}}</td>
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Actions</mat-label>
+                                <mat-select (selectionChange)="makeDeliveryAccept($event, d.username)" [(ngModel)]="deliveryPartnerStatus">
+                                    <mat-option value="Accept">Accept</mat-option>
+                                    <mat-option value="Denied">Denied</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                      </tr>
+                </tbody>
+              </table>
+        </section>
+
+        <section id="customer"   *ngIf="isCustomer && (!isVendor && !isDelivery)">
+          <h2 class="section_heading" align="center">Customers List</h2>
+          <div class="table align-middle mb-0 bg-white customerTable ">
+                 <app-customertable></app-customertable>
+          </div>
+          
+        </section>
+    </mat-sidenav-content>
+</mat-sidenav-container>

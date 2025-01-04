@@ -1,0 +1,129 @@
+<div class="bootstrap-wrapper">
+  <div class="container formbox text-center">
+    <div class="row register-container">
+      <div class="col-md-8 ml-3 col-sm-4">
+        <h2 class="mb-5">Add Product</h2>
+        <form [formGroup]="productForm" (ngSubmit)="sendData()" (ngReset)="resetForm()" >
+
+
+          <!-- Other form fields -->
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Product Id</mat-label>
+              <input matInput placeholder="" formControlName="productid" id="productid" type="text">
+              <mat-icon matSuffix><i class="fab fa-product-hunt"></i></mat-icon>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Product Name</mat-label>
+              <input matInput placeholder="" formControlName="productname" type="text">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Category</mat-label>
+              <mat-select placeholder="Select Category" formControlName="category" id="category">
+                <mat-option value="Fashion">Fashion</mat-option>
+                <mat-option value="Grocery">Grocery</mat-option>
+                <mat-option value="Electronics">Electronics</mat-option>
+                <mat-option value="Furniture">Furniture</mat-option>
+                <mat-option value="Beauty">Beauty</mat-option>
+                <mat-option value="Books">Books</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Price</mat-label>
+              <input matInput placeholder="" formControlName="price" type="number">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Quantity</mat-label>
+              <input matInput placeholder="" formControlName="quantity" type="number">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Offer</mat-label>
+              <input matInput placeholder="" formControlName="offer" type="text">
+            </mat-form-field>
+          </div>
+          <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="" formControlName="description" type="text">
+          </mat-form-field>
+          <br>
+
+          <br><br>
+          <!-- Color fields -->
+          <div class="col">
+          <h2>Colors</h2>
+          <div class="form-fields">
+            <div formArrayName="colors">
+              <div class="input-group" *ngFor="let color of colors().controls; let i = index" [formGroupName]="i">
+                <mat-form-field class="full-width">
+                  <mat-label>Color {{ i + 1 }}</mat-label>
+                  <input matInput placeholder="" formControlName="color" type="text">
+                  <mat-icon matSuffix (click)="removeColor(i)" *ngIf="colors().length > 1">remove_circle</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <button mat-icon-button (click)="addColor()">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </div>
+        </div>
+
+          <br>
+          <!-- Size fields -->
+          <div class="col">
+          <h2>Size</h2>
+          <div class="form-fields">
+            <div formArrayName="sizes">
+              <div class="input-group" *ngFor="let size of sizes().controls; let i = index" [formGroupName]="i">
+                <mat-form-field class="full-width">
+                  <mat-label>Size {{ i + 1 }}</mat-label>
+                  <input matInput placeholder="" formControlName="size" type="text">
+                  <mat-icon matSuffix (click)="removeSize(i)" *ngIf="sizes().length > 1">remove_circle</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <button mat-icon-button (click)="addSize()">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </div>
+        </div>
+        <br>
+        <div class="input-group">
+
+          <label for="">Image</label>  <input placeholder="" id="image" accept="image/*" type="file" (change)="getImage($event)">
+
+
+          <div *ngIf="imagepreview">
+            <img [src]="imagepreview" alt="" style="width: 400px; height: 400px;"  class="img-thumbnail mb-3">
+
+          </div> <br>
+
+          <br><br>
+
+          <!-- Submit button -->
+          <div class="input-group">
+            <button mat-raised-button class="full-width btn-primary" type="submit">
+              Submit
+            </button>
+            <br><br>
+            <button mat-raised-button class="full-width btn-primary" type="reset">
+              Clear
+            </button>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

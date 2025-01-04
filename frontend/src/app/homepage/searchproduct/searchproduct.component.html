@@ -1,0 +1,86 @@
+<div class="search-container">
+<div *ngIf="isLoading else searchProducts" class="text-center " style="margin-top: 10%;">
+  <div class="spinner-grow text-primary slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-danger slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark slow" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+</div>
+
+<ng-template #searchProducts>
+<div *ngIf="!noProductFound else  noproducts">
+<h2 align="center" id="bycategory" class="mt-2 " style="font-family: monospace; font-size: 2rem;">
+  {{searchedProducts[0]?.category}}
+</h2>
+
+ <div class=" products gap-6  ml-4  mt-4    mx-auto grid w-full max-w-8xl items-center d-flex flex-wrap justify-center space-y-4 px-5 py-10 md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3 ">
+
+
+
+
+<div class="rounded-lg product pt-3 px-5 overflow-hidden  mr-3" *ngFor="let product of searchedProducts ">
+  <div (click)="openDialog(product)" >
+  <img
+    [src]="product.imageFile.filePath"
+    alt="Laptop"
+    class="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px]"
+  />
+  <div class="p-2 mt-2">
+    <h3 class="inline-flex  items-center text-md font-semibold">
+     {{product.productname |titlecase}}
+    </h3>
+
+
+    <div class="price" *ngIf="product.offer!=='null'  else nodiscount">
+    <div class="d-flex align-items-center gap-2 border-black" >
+      <h2>  {{ product.price | calculatepricepipe:product.offer | currency:'INR':'symbol':'1.2-2' }}</h2>
+   <h5 class="d-flex align-items-center gap-2" > MRP:<span class="text-decoration-line-through">{{ product.price | currency:'INR':'symbol':'1.2-2' }}</span></h5>
+    </div>
+    <span style="position: relative; bottom: 8px;"> ({{product.offer}} Off) </span>
+
+   </div>
+<ng-template #nodiscount>
+<h2>{{ product.price | currency:'INR':'symbol':'1.2-2' }}</h2>
+
+</ng-template>
+
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+<ng-template #noproducts>
+  <div class="max-w-xl h-50 rounded-lg mx-auto bg-white text-center mt-5 d-flex justify-content-center flex-col align-items-center">
+    <img src="https://www.libocdavamart.in/assets/img/No_Product_Found.png" alt="" style="height: 200px; width: 200px;">
+    <br>
+    <h2 style="font-family: monospace;">Your Search Did not match Any Products</h2>
+    <h3>Please Try Again</h3>
+  </div>
+</ng-template>
+</ng-template>
+</div>
+
+
+

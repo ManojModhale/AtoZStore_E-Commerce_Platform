@@ -1,0 +1,12 @@
+
+<div class="d-flex justify-content-end">
+<ngb-pagination
+  [(page)]="currentPage"
+  [pageSize]="pageSize"
+  [collectionSize]="collectionSize"
+
+  (pageChange)="pageChange.emit($event)"
+  class="mr-5 mb-4"
+  >
+</ngb-pagination>
+</div>

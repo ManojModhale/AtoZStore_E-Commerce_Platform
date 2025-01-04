@@ -1,0 +1,30 @@
+<div class="container-fluid testimonials">
+    <div class="text-center">
+      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+      <h1 class="mb-5">Our Customers Review!</h1>
+    </div>
+
+    <ngb-carousel  [showNavigationArrows]="true">
+      <ng-container *ngFor="let testimonial of testimonials">
+        <ng-template ngbSlide>
+          <div class="card-group cards mb-5">
+            <div class="card p-3 border rounded-3" *ngFor="let t of testimonial">
+              <div class="card-body">
+
+
+                <h3 class="card-title">{{ t.name }}</h3>
+
+                <!-- <h4 class="role">{{ t.role }}</h4> -->
+                <p class="card-text mb-3 rounded-3">
+                  <i class="fa-solid fa-quote-left"></i><br>
+                  {{ t.message }}
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+
+    </ngb-carousel>
+  </div>

@@ -1,0 +1,202 @@
+*{
+    box-sizing: border-box;
+
+  }
+  .content{
+    background-color: #f4f4f4;
+    /* background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%); */
+  }
+
+
+  .btn{
+    border: 1px solid black;
+  padding: 0.6rem 2rem;
+  /* font-size: 1rem; */
+  color: black;
+
+  }
+  .show{
+    display: block;
+  }
+  .hide{
+    display: none;
+  }
+  .searchbox{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    color:black;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+  .searchbox input{
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.5rem;
+    width: 70%;
+    background: transparent;
+    color: black;
+  }
+  .searchbox:hover{
+    box-shadow: 0 0 3px 3px white;
+  }
+  .searchbox input::placeholder {
+    color: rgb(72, 71, 71);
+    font-size: 1.3rem;
+  }
+  .searchbox.fa-solid{
+    position: absolute;
+   top: 5px;
+  }
+  .box{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  color: black;
+  }
+   .cart{
+    border: 1px solid black;
+  padding: 0.3rem 0.9rem;
+    border-radius: 7px;
+    transition: all 0.5s;
+    color: black;
+    margin-left: 0.7rem;
+    margin-right: 0.4rem;
+
+  }
+   .cart:hover{
+    background-color: rgb(241, 238, 238);
+    border: 1px solid rgb(226, 219, 219);
+
+    color: black;
+  }
+  .dropdown-item{
+    font-size: 1.1rem;
+  }
+  .dropdown{
+   border: 1px solid white;
+    color: white;
+    }
+  .font-bold {
+    color: white;
+  }
+  .d:none{
+    display: none;
+  }
+  .d:block{
+    display: block;
+  }
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+  .sidenav{
+    position: absolute;
+    z-index: 999;
+  }
+  .navbar{
+    background-color:#00193a;
+
+    display: flex;
+    align-items: center;
+  font-size: 1.5rem;
+  }
+
+
+  .add{
+  color: black;
+  background-color: aqua;
+  margin-right: 500px;
+  }
+  .products {
+    height: 100vh;
+    overflow-y: scroll; /* Show scrollbar only when needed */
+  }
+
+  /* Hide scrollbar */
+  .products::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+
+    .main{
+      display: flex;
+      flex-direction: row;
+      background-image: url("/assets/vendortheme2.jpg"); 
+      /* background-color: white; */
+
+
+    }
+    .info-box{
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      padding-left: 20px;
+      margin: 25px;
+      border: 1px lightgray solid;
+      height: 170px;
+      background-color: floralwhite;
+      border-radius: 15px;
+    }
+    .sub-info-box{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .icon1{
+      color: white;
+
+    }
+
+
+
+    @media only screen and (max-width: 768px) {
+      /* Adjustments for screens smaller than 768px width */
+      .navbar {
+        font-size: 1rem;
+      }
+
+      .navbar .logo {
+        font-size: 1.2rem;
+      }
+
+      .navbar .add {
+        margin-right: 100px; /* Adjust as needed */
+      }
+
+      .main {
+        flex-direction: column; /* Stack elements vertically */
+      }
+
+      .info-box {
+        width: 100%; /* Full width on smaller screens */
+        margin: 15px; /* Reduce margin */
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      /* Adjustments for screens smaller than 576px width */
+      .navbar {
+        font-size: 0.9rem;
+      }
+
+      .navbar .logo {
+        font-size: 1rem;
+      }
+
+      .navbar .add {
+        margin-right: 50px; /* Adjust as needed */
+      }
+
+      .main {
+        flex-direction: column; /* Stack elements vertically */
+      }
+
+      .info-box {
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px; /* Reduce margin */
+      }
+    }

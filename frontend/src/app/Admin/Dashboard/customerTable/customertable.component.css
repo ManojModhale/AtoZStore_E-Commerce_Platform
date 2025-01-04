@@ -1,0 +1,23 @@
+
+  /* customertable.component.css */
+
+/* Apply padding to the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Style the header row */
+th {
+  background-color: #f2f2f2;
+}
+
+/* Style alternate rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

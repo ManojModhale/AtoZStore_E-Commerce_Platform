@@ -1,0 +1,17 @@
+<div class="previospage border w-10 bg-white " (click)="gotoCategory()">
+
+  <i class="fas fa-2xl fa-arrow-left ml-2"></i>
+
+  </div>
+   <div class="productandfilters">
+     <button class="icons"  (click)="handleClick()" >
+    <i
+
+     class="fas fa-2xl fa-filter"
+      ></i>
+      </button>
+    <div [class]=" showfilters ?'filter active'   :'filter'">
+   <app-filters (priceFilterSubmit)="handlePriceFilter($event)" ></app-filters>
+   </div>
+   <app-products [products]="products" ></app-products>
+   </div>

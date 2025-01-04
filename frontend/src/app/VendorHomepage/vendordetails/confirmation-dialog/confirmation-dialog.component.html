@@ -1,0 +1,7 @@
+<mat-dialog-content style="width: 500px; height: 100px;">
+  Are you sure you want to delete this product?
+</mat-dialog-content>
+<mat-dialog-actions class="btns ">
+  <button mat-button (click)="dialogRef.close(false)">Cancel</button>
+  <button mat-raised-button color="primary" (click)="dialogRef.close(true)">Yes</button>
+</mat-dialog-actions>

@@ -1,0 +1,172 @@
+<div  style="height: 100vh; margin: 0;">
+  <mat-toolbar class="navbar py-2">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center " >
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" class="text-white" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <a (click)="goToHome()" class="text-decoration-none cursor-pointer ">
+      <span class="font-bold ml-4 logo"><i class="fa-solid mr-3  fa-shopping-bag fa-xl"></i>AtoZStore</span>
+      </a>
+
+      <div fxShow="true" fxHide.lt-md fxLayout="row" fxLayoutAlign="end center" class="g-3 mr-5">
+        <form class="d-flex input-group w-auto" [formGroup]="searchForm">
+          <div class="searchbox">
+
+            <input type="search" name="" id="" formControlName="searchinput" placeholder="Search product"
+            [matAutocomplete]="auto"
+            >
+            <div class="closeicon" (click)="clearSearchInput()" class="mr-2" *ngIf="showSuggestions">
+
+
+              <i class="fa-solid fa-sm fa-times" ></i>
+              </div>
+            <div class="searchicon" (click)="onClickSearch()">
+
+
+            <i class="fa-solid fa-magnifying-glass" ></i>
+            </div>
+            <mat-autocomplete  class="mt-1"   autoActiveFirstOption #auto="matAutocomplete"  >
+      <div *ngIf="showSuggestions">
+              <mat-option [value]="option" (click)="showProduct(option)"  class="w-100" *ngFor="let option of suggestions">{{option}}</mat-option>
+</div>
+          </mat-autocomplete>
+          </div>
+
+        </form>
+      </div>
+      <div fxShow="true" fxHide.lt-md fxLayout="row" fxLayoutAlign="end center" class="g-3 mr-5">
+
+        <a routerLink="cart" >  <div class="cart ">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div></a>
+
+        <!-- <a routerLink="orderHistory" >  <div class="cart ">
+          <i class="fa-solid fas fa-history">Order History</i>
+          <i class="material-icons">history</i>
+        </div></a> -->
+
+
+        <div mdbDropdown class="dropdown" style="color: white;">
+          <button
+
+            class="btn  dropdown-toggle"
+            type="button"
+            id="dropdownMenu2"
+            mdbDropdownToggle
+            aria-expanded="false"
+          >
+          <i class="fa-solid fa-user  fa-2xl"></i>
+
+          </button>
+          <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><a  routerLink="profile" class="dropdown-item" >
+
+              View Profile <i class="fa-solid fa-eye  "></i>
+            </a></li>
+            <li><a  routerLink="orderHistory" class="dropdown-item" >
+
+              Order History <i class="fa-solid fas fa-history"></i>
+            </a></li>
+            <li><button class="dropdown-item" type="button">
+              <a  (click)="logout()">
+              Logout
+              </a>
+              <i class="fa-solid fa-sign-out"></i></button></li>
+            <li>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+      </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="my-2" fxLayout="row" fxLayoutAlign="center center "fxHide.gt-sm >
+      <form class="d-flex input-group w-auto" [formGroup]="searchForm" >
+        <div class="searchbox">
+
+          <input type="search" name="" id="" formControlName="searchinput" placeholder="Search product"
+          [matAutocomplete]="auto"
+          >
+          <div class="closeicon" (click)="clearSearchInput()" class="mr-2" *ngIf="showSuggestions">
+
+
+            <i class="fa-solid fa-sm fa-times" ></i>
+            </div>
+          <div class="searchicon" (click)="onClickSearch()">
+
+
+          <i class="fa-solid fa-magnifying-glass" ></i>
+          </div>
+          <mat-autocomplete  class="mt-1"   autoActiveFirstOption #auto="matAutocomplete"  >
+    <div *ngIf="showSuggestions">
+            <mat-option [value]="option" (click)="showProduct(option)"  class="w-100" *ngFor="let option of suggestions">{{option}}</mat-option>
+</div>
+        </mat-autocomplete>
+        </div>
+
+      </form>
+      </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container >
+    <mat-sidenav #sidenav class="w-50">
+      <mat-nav-list>
+
+        <a routerLink="cart"  mat-list-item (click)="sidenav.toggle()">
+          <div class="  text-black text-2xl">
+            Cart
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+
+
+
+      </a>
+
+      <a  routerLink="profile" class="  text-black text-2xl"  mat-list-item (click)="sidenav.toggle()">
+
+        <div class="  text-black text-2xl">
+          View Profile
+        <i class="fa-solid fa-user"></i>
+      </div>
+      </a>
+      
+      <a  routerLink="orderHistory" class="  text-black text-2xl"  mat-list-item (click)="sidenav.toggle()">
+
+        <div class="  text-black text-2xl">
+          Order History 
+          <i class="fa-solid fas fa-history"></i>
+      </div>
+      </a>
+      
+
+
+      <a routerLink="logout" class="  text-black text-2xl" (click)="sidenav.toggle()"  mat-list-item>
+        <div class="  text-black text-2xl">
+          Logout
+        <i class="fa-solid fa-sign-out"></i>
+      </div>
+      </a>
+
+
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content  class="content" >
+
+
+
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+
+
+
+

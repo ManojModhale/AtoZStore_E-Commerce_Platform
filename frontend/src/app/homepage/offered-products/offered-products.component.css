@@ -1,0 +1,57 @@
+.products{
+
+  width: 90%;
+  font-size: 1rem;
+padding:2rem  ;
+display: flex;
+justify-content: center;
+
+
+
+
+
+}
+.product{
+  background-color:white;
+  /* width: 28%; */
+ color:rgb(74, 75, 74);
+  border: 2px solid rgb(7, 154, 173);
+  /* box-shadow: 0 0 12px 1px rgb(131, 132, 132); */
+  width: 380px;
+  height: 400px;
+
+
+
+
+
+}
+.selected {
+  background-color: black;
+}
+
+.desc{
+  font-size: 0.7rem;
+}
+.colors{
+  display: flex;
+  flex-wrap: wrap;
+}
+.radiobutton{
+display: flex;
+gap: 2px;
+
+font-size: 1rem;
+
+align-items: center;
+
+}
+.offer{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.radiobutton input, .radiobutton label {
+  display: inline-block;
+  margin: 0;
+padding:0;
+
+}

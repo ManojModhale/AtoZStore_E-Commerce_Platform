@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+    flex-direction: row;
+    width: 100vw;
+    border: 1px solid black;
+
+}
+
+.info-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    padding-left: 20px;
+    margin: 25px;
+    height: 180px;
+
+}
+
+.info-box:hover {
+  background-color: #f0f0f0;
+}
+
+.sub-info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for h2, h3 elements can be added here if needed */
+
+

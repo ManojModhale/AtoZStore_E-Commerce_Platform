@@ -1,0 +1,22 @@
+<p>addimage works!</p>
+
+<form id="signin" (ngSubmit)="handleSubmit()"  [formGroup]="addproduct">
+<div class="col">
+    <mat-form-field class="full-width">
+      <mat-label>Product Id</mat-label>
+      <input matInput placeholder="" formControlName="productid" id="productid" type="text">
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+  </div>
+
+                <label for="">Image</label>  <input placeholder="" id="image" accept="image/*" type="file" (change)="getImage($event)">
+
+
+                <div *ngIf="imagepreview">
+                  <img [src]="imagepreview" alt="" style="width: 400px; height: 400px;"  class="img-thumbnail mb-3">
+
+                </div> 
+                <div class="text-center">
+                  <button mat-raised-button [disabled]="!addproduct.valid" class="full-width btn-primary" type="submit">Submit</button>
+                </div>
+            </form>

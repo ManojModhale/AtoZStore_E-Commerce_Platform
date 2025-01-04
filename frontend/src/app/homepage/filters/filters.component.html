@@ -1,0 +1,97 @@
+
+
+<main>
+  <div class="container-fluid mt-4" >
+    <div class="md:flex md:flex-row md:items-start md:justify-between">
+
+
+      <div class="md:flex-shrink-0 md:w-full md:mr-4 fw-bold">
+        <aside class="filters my-2 border-2 border-dashed ">
+          <!-- Filtering code -->
+          <div class="mx-3 my-1 py-1">
+
+            <div>
+              <div class="my-2">FILTERS</div>
+              <div class="gender-options ml-3">
+                <input type="radio" class="form-check-input" id="radio-men" name="gender" value="men" />
+                <label class="form-check-label" for="radio-men">Men</label>
+                <br>
+                <input type="radio" class="form-check-input" id="radio-women" name="gender" value="women" />
+                <label class="form-check-label" for="radio-women">Women</label>
+                <br>
+                <input type="radio" class="form-check-input" id="radio-kids" name="gender" value="kids" />
+                <label class="form-check-label" for="radio-kids">Kids</label>
+                <br>
+                <input type="radio" class="form-check-input" id="radio-senior" name="gender" value="senior" />
+                <label class="form-check-label" for="radio-senior">Senior Citizen</label>
+                <br>
+                <input type="radio" class="form-check-input" id="radio-boy" name="gender" value="boy" />
+                <label class="form-check-label" for="radio-boy">Boy</label>
+                <br>
+                <input type="radio" class="form-check-input" id="radio-girl" name="gender" value="girl" />
+                <label class="form-check-label" for="radio-girl">Girl</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-3 my-1 py-1">
+            <div>
+              <div class="my-2 ">PRICE RANGE</div>
+              <form class="price-filter-form" (ngSubmit)="handlePriceFilterSubmit()">
+                <div class="flex items-center mb-2">
+                  <input name="minprice" id="minprice" type="number" placeholder="Enter minimum price" [(ngModel)]="minPrice" />
+                </div>
+
+                <div class="flex items-center mb-2">
+                  <input name="maxprice" id="maxprice" type="number" placeholder="Enter maximum price" [(ngModel)]="maxPrice" />
+                </div>
+
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- <div class="mx-3 my-1 py-1">
+            <div>
+              <div class="my-2">Size</div>
+              <div  class="ml-3" *ngFor="let val of sizeFinal">
+                <input type="checkbox" class="form-check-input" id="{{'checkbox-' + val}}" [value]="val"
+                  (change)="handleChange($event)" />
+                <label class="form-check-label" for="{{'checkbox-' + val}}">{{val}}</label>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="mx-3 my-1 py-1">
+            <div>
+              <div class="my-2">CATEGORIES</div>
+              <div class="ml-3" *ngFor="let val of categories">
+                <input type="radio" class="form-check-input" id="{{'radio-' + val}}" name="radioGroup" [value]="val"
+                  (click)="selectCategory($event)" />
+                <label class="form-check-label" for="{{'radio-' + val}}">{{val}}</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="mx-3 my-1 py-1">
+            <div>
+              <div class="my-2">COLOURS</div>
+              <div class="ml-3" *ngFor="let val of colours">
+                <input type="checkbox" class="form-check-input" id="{{'checkbox-' + val}}" [value]="val"
+                  (change)="handleChange($event)" />
+                <label class="form-check-label" for="{{'checkbox-' + val}}">{{val}}</label>
+              </div>
+            </div>
+          </div> -->
+
+        </aside>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</main>
